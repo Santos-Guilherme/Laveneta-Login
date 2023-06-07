@@ -14,10 +14,37 @@ datasource db {
 
 model User {
  id String @id @default(uuid())
- name String
+ nome String
  email String
- password String
- created_at DateTime? @default(now())
- updated_at DateTime? @default(now())
+ senha String
  @@map("users")
+}
+
+model Cardapio {
+ id String @id @default(uuid())
+ sabor String
+ ingredientes String
+ valor Float
+ @@map("cardapio")
+}
+
+model Comanda {
+ id String @id @default(uuid())
+ mesa Int
+ pizzas String
+ valorTotal Float
+ estadoPronto Boolean
+ estadoEntregue Boolean
+ pagamento Boolean
+ @@map("comanda")
+}
+
+model Reserva {
+id String @id @default(uuid())
+nomeCliente String
+cpf String
+data DateTime
+hora String
+mesaReservada Int
+@@map("reserva")
 }

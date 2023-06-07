@@ -16,12 +16,12 @@ class AuthUserService {
         }
         //verificar validade password
 
-        if (user.password !== password) {
+        if (user.senha !== password) {
             throw new Error("User/PassWord Invalido.")
         }
         //return { ok: "Chamada serviço Auth" }
         return {
-            nomeUsuario: user.name
+            nomeUsuario: user.nome
         }
     }
 }
